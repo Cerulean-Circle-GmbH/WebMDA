@@ -9,16 +9,17 @@ import { MoveElementCommand } from "/src/controller/commands/MoveElementCommand"
 import { TouchHandler } from "/src/view/touch/TouchHandler";
 
 const App: React.FC = () => {
-  const [model, setModel] = useState<UmlModel>(new UmlModel());
+  const [model] = useState<UmlModel>(new UmlModel());
   const [commandManager] = useState<CommandManager>(new CommandManager());
   const [syncManager] = useState<SyncManager>(new SyncManager());
+  const [renderKey, setRenderKey] = useState<number>(0);
   const svgRef = useRef<SVGSVGElement>(null);
   const touchHandlerRef = useRef<TouchHandler | null>(null);
 
   useEffect(() => {
     commandManager.init(model);
     syncManager.updateModel(model);
-  }, [model]);
+  }, []);
 
   useEffect(() => {
     if (svgRef.current) {
@@ -31,17 +32,15 @@ const App: React.FC = () => {
       );
       touchHandlerRef.current = touchHandler;
     }
-  }, [svgRef.current, model]);
+  }, [svgRef.current]);
+
+  const forceUpdate = () => {
+    setRenderKey(prev => prev + 1);
+    syncManager.updateModel(model);
+  };
 
   const handleElementSelect = (uuid: string) => {
     console.log("Selected:", uuid);
-  };
-
-  const updateModel = () => {
-    const newModel = new UmlModel();
-    newModel.init(model.serialize());
-    setModel(newModel);
-    syncManager.updateModel(newModel);
   };
 
   const handleElementMove = (uuid: string, newPosition: Position) => {
@@ -54,15 +53,16 @@ const App: React.FC = () => {
       const command = new MoveElementCommand();
       command.init(model, uuid, oldPosition, newPosition);
       commandManager.execute(command);
-      updateModel();
+      forceUpdate();
     }
   };
 
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <Toolbar model={model} commandManager={commandManager} onModelUpdate={updateModel} />
+      <Toolbar model={model} commandManager={commandManager} onModelUpdate={forceUpdate} />
       <div style={{ width: "100%", height: "calc(100vh - 50px)" }}>
         <SvgCanvas
+          key={renderKey}
           ref={svgRef}
           model={model}
           onElementSelect={handleElementSelect}
