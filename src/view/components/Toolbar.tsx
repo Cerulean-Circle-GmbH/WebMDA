@@ -7,9 +7,10 @@ import { UmlClass } from "/src/core/uml/UmlClass";
 interface ToolbarProps {
   model: UmlModel;
   commandManager: CommandManager;
+  onModelUpdate: () => void;
 }
 
-export const Toolbar: React.FC<ToolbarProps> = ({ model, commandManager }) => {
+export const Toolbar: React.FC<ToolbarProps> = ({ model, commandManager, onModelUpdate }) => {
   const handleAddClass = () => {
     const newClass = new UmlClass();
     newClass.name = "NewClass";
@@ -22,6 +23,7 @@ export const Toolbar: React.FC<ToolbarProps> = ({ model, commandManager }) => {
     const command = new CreateElementCommand();
     command.init(model, newClass);
     commandManager.execute(command);
+    onModelUpdate();
   };
 
   const handleUndo = () => {

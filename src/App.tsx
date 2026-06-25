@@ -37,6 +37,13 @@ const App: React.FC = () => {
     console.log("Selected:", uuid);
   };
 
+  const updateModel = () => {
+    const newModel = new UmlModel();
+    newModel.init(model.serialize());
+    setModel(newModel);
+    syncManager.updateModel(newModel);
+  };
+
   const handleElementMove = (uuid: string, newPosition: Position) => {
     const element = model.getElement(uuid);
     if (element) {
@@ -47,16 +54,13 @@ const App: React.FC = () => {
       const command = new MoveElementCommand();
       command.init(model, uuid, oldPosition, newPosition);
       commandManager.execute(command);
-      
-      const newModel = new UmlModel();
-      newModel.init(model.serialize());
-      setModel(newModel);
+      updateModel();
     }
   };
 
   return (
     <div style={{ width: "100vw", height: "100vh", position: "relative" }}>
-      <Toolbar model={model} commandManager={commandManager} />
+      <Toolbar model={model} commandManager={commandManager} onModelUpdate={updateModel} />
       <div style={{ width: "100%", height: "calc(100vh - 50px)" }}>
         <SvgCanvas
           ref={svgRef}
