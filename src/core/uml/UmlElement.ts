@@ -1,7 +1,7 @@
-import { Item } from "../base/Item";
-import { UuidGenerator } from "../base/UuidGenerator";
-import { Position } from "../../utils/geometry/Position";
-import { Size } from "../../utils/geometry/Size";
+import { Item } from "/src/core/base/Item";
+import { UuidGenerator } from "/src/core/base/UuidGenerator";
+import { Position } from "/src/utils/geometry/Position";
+import { Size } from "/src/utils/geometry/Size";
 
 export class UmlElement extends Item {
   constructor() {

@@ -1,6 +1,6 @@
-import { UmlModel } from "../uml/UmlModel";
-import { PlantUmlSerializer } from "./PlantUmlSerializer";
-import { TypeScriptSerializer } from "./TypeScriptSerializer";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { PlantUmlSerializer } from "/src/core/serialization/PlantUmlSerializer";
+import { TypeScriptSerializer } from "/src/core/serialization/TypeScriptSerializer";
 
 export class SyncManager {
   private model: UmlModel;

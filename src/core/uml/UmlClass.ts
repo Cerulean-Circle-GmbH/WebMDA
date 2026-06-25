@@ -1,6 +1,6 @@
-import { UmlElement } from "./UmlElement";
-import { UmlAttribute } from "./UmlAttribute";
-import { UmlMethod } from "./UmlMethod";
+import { UmlElement } from "/src/core/uml/UmlElement";
+import { UmlAttribute } from "/src/core/uml/UmlAttribute";
+import { UmlMethod } from "/src/core/uml/UmlMethod";
 
 export class UmlClass extends UmlElement {
   constructor() {

@@ -1,6 +1,6 @@
-import { Command } from "../Command";
-import { UmlModel } from "../../core/uml/UmlModel";
-import { Position } from "../../utils/geometry/Position";
+import { Command } from "/src/controller/Command";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { Position } from "/src/utils/geometry/Position";
 
 export class MoveElementCommand extends Command {
   private elementId: string;

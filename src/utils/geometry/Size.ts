@@ -1,5 +1,5 @@
-import { Item } from "../../core/base/Item";
-import { UuidGenerator } from "../../core/base/UuidGenerator";
+import { Item } from "/src/core/base/Item";
+import { UuidGenerator } from "/src/core/base/UuidGenerator";
 
 export class Size extends Item {
   constructor() {

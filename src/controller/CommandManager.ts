@@ -1,5 +1,5 @@
-import { Command } from "./Command";
-import { UmlModel } from "../core/uml/UmlModel";
+import { Command } from "/src/controller/Command";
+import { UmlModel } from "/src/core/uml/UmlModel";
 
 export class CommandManager {
   private undoStack: Command[];

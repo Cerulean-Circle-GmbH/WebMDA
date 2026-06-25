@@ -1,7 +1,7 @@
-import { Item } from "../base/Item";
-import { UuidGenerator } from "../base/UuidGenerator";
-import { UmlElement } from "./UmlElement";
-import { UmlRelationship } from "./UmlRelationship";
+import { Item } from "/src/core/base/Item";
+import { UuidGenerator } from "/src/core/base/UuidGenerator";
+import { UmlElement } from "/src/core/uml/UmlElement";
+import { UmlRelationship } from "/src/core/uml/UmlRelationship";
 
 export class UmlModel extends Item {
   constructor() {

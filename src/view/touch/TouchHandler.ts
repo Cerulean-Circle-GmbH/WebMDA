@@ -1,6 +1,6 @@
 import Hammer from "hammerjs";
-import { UmlModel } from "../../core/uml/UmlModel";
-import { Position } from "../../utils/geometry/Position";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { Position } from "/src/utils/geometry/Position";
 
 export class TouchHandler {
   private hammer: HammerManager;

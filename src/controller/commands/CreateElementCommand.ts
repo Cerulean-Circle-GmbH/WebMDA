@@ -1,6 +1,6 @@
-import { Command } from "../Command";
-import { UmlModel } from "../../core/uml/UmlModel";
-import { UmlElement } from "../../core/uml/UmlElement";
+import { Command } from "/src/controller/Command";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { UmlElement } from "/src/core/uml/UmlElement";
 
 export class CreateElementCommand extends Command {
   private element: UmlElement;

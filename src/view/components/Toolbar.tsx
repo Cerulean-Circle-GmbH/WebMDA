@@ -1,8 +1,8 @@
 import React from "react";
-import { UmlModel } from "../../core/uml/UmlModel";
-import { CommandManager } from "../../controller/CommandManager";
-import { CreateElementCommand } from "../../controller/commands/CreateElementCommand";
-import { UmlClass } from "../../core/uml/UmlClass";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { CommandManager } from "/src/controller/CommandManager";
+import { CreateElementCommand } from "/src/controller/commands/CreateElementCommand";
+import { UmlClass } from "/src/core/uml/UmlClass";
 
 interface ToolbarProps {
   model: UmlModel;

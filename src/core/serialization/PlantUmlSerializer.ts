@@ -1,6 +1,6 @@
-import { UmlModel } from "../uml/UmlModel";
-import { UmlClass } from "../uml/UmlClass";
-import { UmlRelationship } from "../uml/UmlRelationship";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { UmlClass } from "/src/core/uml/UmlClass";
+import { UmlRelationship } from "/src/core/uml/UmlRelationship";
 
 export class PlantUmlSerializer {
   constructor() {}

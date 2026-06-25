@@ -1,5 +1,5 @@
-import { UmlModel } from "../uml/UmlModel";
-import { UmlElement } from "../uml/UmlElement";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { UmlElement } from "/src/core/uml/UmlElement";
 
 export class TypeScriptSerializer {
   constructor() {}

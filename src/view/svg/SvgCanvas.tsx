@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
-import { UmlModel } from "../../core/uml/UmlModel";
-import { UmlElement } from "../../core/uml/UmlElement";
-import { UmlRelationship } from "../../core/uml/UmlRelationship";
-import { Position } from "../../utils/geometry/Position";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { UmlElement } from "/src/core/uml/UmlElement";
+import { UmlRelationship } from "/src/core/uml/UmlRelationship";
+import { Position } from "/src/utils/geometry/Position";
 
 interface SvgCanvasProps {
   model: UmlModel;

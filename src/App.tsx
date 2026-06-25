@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { UmlModel } from "../core/uml/UmlModel";
-import { CommandManager } from "../controller/CommandManager";
-import { SyncManager } from "../core/serialization/SyncManager";
-import { SvgCanvas } from "../view/svg/SvgCanvas";
-import { Toolbar } from "../view/components/Toolbar";
-import { Position } from "../utils/geometry/Position";
-import { MoveElementCommand } from "../controller/commands/MoveElementCommand";
-import { TouchHandler } from "../view/touch/TouchHandler";
+import { UmlModel } from "/src/core/uml/UmlModel";
+import { CommandManager } from "/src/controller/CommandManager";
+import { SyncManager } from "/src/core/serialization/SyncManager";
+import { SvgCanvas } from "/src/view/svg/SvgCanvas";
+import { Toolbar } from "/src/view/components/Toolbar";
+import { Position } from "/src/utils/geometry/Position";
+import { MoveElementCommand } from "/src/controller/commands/MoveElementCommand";
+import { TouchHandler } from "/src/view/touch/TouchHandler";
 
 const App: React.FC = () => {
   const [model, setModel] = useState<UmlModel>(new UmlModel());

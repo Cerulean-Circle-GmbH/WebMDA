@@ -1,4 +1,4 @@
-import { UmlModel } from "../core/uml/UmlModel";
+import { UmlModel } from "/src/core/uml/UmlModel";
 
 export abstract class Command {
   protected model: UmlModel;

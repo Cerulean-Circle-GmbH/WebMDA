@@ -1,6 +1,6 @@
-import { Item } from "../base/Item";
-import { UuidGenerator } from "../base/UuidGenerator";
-import { Position } from "../../utils/geometry/Position";
+import { Item } from "/src/core/base/Item";
+import { UuidGenerator } from "/src/core/base/UuidGenerator";
+import { Position } from "/src/utils/geometry/Position";
 
 export class UmlRelationship extends Item {
   constructor() {
